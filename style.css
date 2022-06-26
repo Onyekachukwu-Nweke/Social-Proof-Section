@@ -1,0 +1,222 @@
+/* Variables */
+:root{
+    --comment-head: hsla(333, 74%, 45%, 0.979);
+    --pry-text-color: hsl(300, 43%, 22%);
+    --comment-box: hsl(303, 10%, 53%);
+    --rating-box: hsl(300, 24%, 96%);
+    --background: hsl(0, 0%, 100%);
+}
+
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;700&display=swap');
+
+
+
+/* Resets */
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+/* Base Styles */
+body{
+    background-color: var(--background);
+    font-family: 'League Spartan', sans-serif;
+    font-size: 15px;
+    height: 100vh;
+    max-width: 100vw;
+}
+
+.main-container{
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.header{
+    display: flex;
+    flex-flow: column wrap;
+    gap: 30px;
+}
+
+h1{
+    color: var(--pry-text-color);
+    text-align: center;
+    font-weight: 700;
+}
+
+h3{
+    color: var(--pry-text-color);
+    text-align: center;
+    font-weight: 700;
+}
+
+h4{
+    color: var(--background);
+    font-weight: 700;
+}
+
+h5{
+    color: var(--comment-head);
+    font-weight: 700;
+}
+
+.leading{
+    color: var(--comment-box);
+    font-weight: 500;
+    text-align: center;
+}
+
+.rating-container{
+   display: grid;
+   grid-template-rows: repeat(3,1fr);
+   gap: 10px;
+}
+
+.rating-card{
+    background-color: var(--rating-box);
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.testimonial-container{
+    display: grid;
+    gap: 10px;
+}
+
+.test-card{
+    background-color: var(--pry-text-color);
+    border-radius: 10px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 30px;
+}
+
+.test-card img{
+    border-radius: 50%;
+}
+
+.min-prof{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.test{
+    text-align: left;
+    color: var(--background);
+    font-weight: 400;
+}
+
+/* Mobile Styles */
+@media screen and (max-width: 500px){
+
+
+    .main-container{
+        display: flex;
+        flex-flow: column;
+        gap: 20px;
+    }
+
+    .testimonial-container{
+        grid-template-rows: repeat(3,1fr);
+    }
+
+    .rating-card{
+        height: 60px;
+    }
+
+    .min-prof img{
+        width: 50px;
+    }
+
+    .test-card{
+        height: 200px;
+    }
+}
+
+@media screen and (min-width: 768px){
+
+    .main-container{
+        display: grid;
+        align-self: center;
+        grid-template-columns: repeat(2, 1fr);
+        padding: 70px 100px;
+        gap: 60px;
+    }
+
+    .header h1{
+        font-size: 2.5em;
+        width: 55%;
+        text-align: left;
+    }
+
+    .leading{
+        width: 80%;
+        text-align: left;
+    }
+
+    .rating-card{
+        width: 450px;
+        flex-flow: row nowrap;
+        justify-content: space-evenly;
+        height: 50px;
+    }
+
+    .rating-container{
+        gap: 5px;
+    }
+
+    .box1{
+        place-self: start;
+    }
+
+    .box2{
+        place-self: center;
+    }
+
+    .box3{
+        place-self: end;
+    }
+
+    .testimonial-container{
+        grid-column: span 2;
+        grid-template-columns:  repeat(3, 1fr);
+        height: 280px;
+        gap: 20px;
+    }
+
+    .test-card{
+        height: 250px;
+        border-radius: 10px;
+        width: 350px;
+    }
+
+    .card1{
+        place-self: start;
+    }
+
+    .card2{
+        place-self: center;
+    }
+
+    .card3{
+        place-self: end;
+    }
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
